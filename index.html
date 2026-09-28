@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ybá Essence | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="assets/Logo.png" alt="Logo da marca">
+        <nav>
+            <a href="index.html" class="atual">HOME</a>
+            <a href="produtos.html">PRODUTOS</a>
+            <a href="servicos.html">SERVIÇOS</a>
+        </nav>
+        <img id="user" src="assets/Ícone - Usuário.svg" alt="User">
+    </header>
+
+    <main>
+        <section id="banner">
+            <h1>SAÚDE, BEM-ESTAR E <span class="destaque">AUTOESTIMA</span></h1>
+            <p>
+                Cuidados personalizados para realçar a beleza natural da sua pele.
+            </p>
+            <a class="botao" href="produtos.html">CONHEÇA</a>
+        </section>
+
+        <section id="sobre">
+            <h2>SOBRE A YBÁ ESSENCE</h2>
+            <p>
+                A Ybá Essence é uma empresa voltada para o cuidado da pele e para o bem-estar das pessoas,
+                atuando no mercado de estética, prestando serviços que ajudam na saúde da pele e na autoestima
+                de seus clientes.
+            </p>
+            <p>
+                Esta empresa sempre procura usar produtos de qualidade e técnicas atuais, sem deixar de lado o
+                atendimento a cada pessoa, um de seus diferenciais é o atendimento pessoal, que dá suporte
+                específico para tal cliente cuidar da sua pele no dia a dia.
+            </p>
+        </section>
+        <section id="back">
+            <section id="produto">
+                <h2>PRODUTOS EM DESTAQUE</h2>
+                <div class="carrossel-wrapper">
+                    <button class="btn-carrossel prev" id="btnPrev">&#10094;</button>
+                    <div class="cards-carrossel" id="carrosselCards">
+                        <div class="roupas">
+                            <img src="assets/products/produto1.jpeg" alt="Óleo Bronzeador 120 ml">
+                            <h3>Óleo Bronzeador 120 ml</h3>
+                        </div>
+                        <div class="roupas">
+                            <img src="assets/products/produto2.jpeg" alt="Protetor Solar 120 g">
+                            <h3>Protetor Solar 120 g</h3>
+                        </div>
+                        <div class="roupas">
+                            <img src="assets/products/produto3.jpeg" alt="Máscara Facial 100 g">
+                            <h3>Máscara Facial 100 g</h3>
+                        </div>
+                        <div class="roupas">
+                            <img src="assets/products/produto4.jpeg" alt="Tônico Facial 150 ml">
+                            <h3>Tônico Facial 150 ml</h3>
+                        </div>
+                        <div class="roupas">
+                            <img src="assets/products/produto5.jpeg" alt="Creme Esfoliante Corporal 300 g">
+                            <h3>Creme Esfoliante Corporal 300 g</h3>
+                        </div>
+                    </div>
+                    <button class="btn-carrossel next" id="btnNext">&#10095;</button>
+                </div>
+                <a href="produtos.html" class="botao">VER TODOS OS PRODUTOS</a>
+            </section>
+        </section>
+
+        <!-- Script para carrossel automático -->
+        <script>
+            const carrossel = document.getElementById('carrosselCards');
+            const btnNext = document.getElementById('btnNext');
+            const btnPrev = document.getElementById('btnPrev');
+
+            function girarCarrossel() {
+                const larguraCard = carrossel.querySelector('.roupas').offsetWidth + 20;
+                if (carrossel.scrollLeft + carrossel.clientWidth >= carrossel.scrollWidth - 10) {
+                    carrossel.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    carrossel.scrollBy({ left: larguraCard, behavior: 'smooth' });
+                }
+            }
+
+            let interval = setInterval(girarCarrossel, 3000);
+
+            carrossel.addEventListener('mouseenter', () => clearInterval(interval));
+            carrossel.addEventListener('mouseleave', () => interval = setInterval(girarCarrossel, 3000));
+
+            btnNext.addEventListener('click', () => {
+                const larguraCard = carrossel.querySelector('.roupas').offsetWidth + 20;
+                carrossel.scrollBy({ left: larguraCard, behavior: 'smooth' });
+            });
+
+            btnPrev.addEventListener('click', () => {
+                const larguraCard = carrossel.querySelector('.roupas').offsetWidth + 20;
+                carrossel.scrollBy({ left: -larguraCard, behavior: 'smooth' });
+            });
+        </script>
+    </main>
+
+    <footer>
+        <div class="rodape">
+            <div class="atendimento">
+                <h3>ATENDIMENTO</h3>
+                <div class="item">
+                    <img src="assets/TelefoneB.png" alt="Telefone">
+                    <p>(11) 99999-9999</p>
+                </div>
+                <div class="item">
+                    <img src="assets/EmailB.png" alt="Email">
+                    <p>contato@ybeessence.com.br</p>
+                </div>
+                <div class="item">
+                    <img src="assets/RelógioB.png" alt="Horário">
+                    <p>Seg - Sex: 09h às 18h</p>
+                </div>
+            </div>
+            <div class="redes">
+                <h3>REDES SOCIAIS</h3>
+                <div class="icones">
+                    <img src="assets/Instagram.png" alt="Instagram">
+                    <img src="assets/Facebook.png" alt="Facebook">
+                    <img src="assets/TikTok.png" alt="TikTok">
+                </div>
+            </div>
+            <div class="moda">
+                <h3>Ybá Essence</h3>
+                <p>© 2026 Ybé Essence.</p>
+                <p>Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

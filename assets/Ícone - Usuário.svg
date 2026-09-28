@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="36"
+   height="37"
+   viewBox="0 0 36 37"
+   fill="none"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="Ícone - Usuário.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="33.324324"
+     inkscape:cx="17.989862"
+     inkscape:cy="18.5"
+     inkscape:window-width="1387"
+     inkscape:window-height="1154"
+     inkscape:window-x="5532"
+     inkscape:window-y="234"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1" />
+  <path
+     d="M4.93684 28.2424C9.17193 23.3734 20.2547 16.5569 30.7053 28.2424M35 18.0265C35 27.4299 27.3888 35.053 18 35.053C8.61116 35.053 1 27.4299 1 18.0265C1 8.62301 8.61116 1 18 1C27.3888 1 35 8.62301 35 18.0265ZM25.3368 14.6212C25.3368 18.5805 22.1321 21.7902 18.1789 21.7902C14.2258 21.7902 11.0211 18.5805 11.0211 14.6212C11.0211 10.6618 14.2258 7.45214 18.1789 7.45214C22.1321 7.45214 25.3368 10.6618 25.3368 14.6212Z"
+     stroke="white"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path1"
+     inkscape:label="path1"
+     style="stroke:#9a6041;stroke-opacity:1" />
+</svg>

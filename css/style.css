@@ -1,0 +1,502 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #E8C39E;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("../assets/ProductsBackground.png");
+    background-size: contain;
+}
+
+main {
+    flex: 1;
+}
+
+/* Tipografia Geral */
+h1 {
+    font-weight: bold;
+    color: white;
+    font-size: 40px;
+}
+
+h2 {
+    font-weight: bold;
+    color: black;
+    font-size: 28px;
+}
+
+h3 {
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+}
+
+p {
+    color: black;
+    font-size: 16px;
+}
+
+.atual,
+.destaque {
+    color: #ECBF36;
+}
+
+/* Botão Geral */
+.botao {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    background-color: #d4a373;
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s, border-radius 0.3s;
+}
+
+.botao:hover {
+    background-color: #9A6041;
+    border-radius: 4px;
+}
+
+
+/* ==========================================
+   CABEÇALHO & NAVEGAÇÃO
+   ========================================== */
+header {
+    background-color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 120px;
+    gap: 20px;
+}
+
+#logo {
+    width: 150px;
+    height: auto;
+    display: block;
+}
+
+nav a {
+    color: #9A6041;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s, color 0.3s;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 15px;
+}
+
+nav a:hover {
+    background-color: #9A6041;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+#user {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+
+/* ==========================================
+   HOME PAGE - BANNER
+   ========================================== */
+#banner {
+    background-image: url("../assets/Banner.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Imagem de fundo fixada ao rolar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 700px;
+    padding: 0 40px;
+    gap: 20px;
+}
+
+#banner h1 {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-weight: bold;
+    font-size: 60px;
+    max-width: 750px;
+}
+
+#banner p {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 30px;
+    max-width: 500px;
+}
+
+#banner .botao {
+    font-size: 18px;
+    padding: 15px 40px;
+}
+
+/* ==========================================
+   SEÇÃO BACK
+   ========================================== */
+#back {
+    background-image: url("../assets/SobreBanner.png");
+    background-size: cover;
+}
+
+/* ==========================================
+   SEÇÃO SOBRE
+   ========================================== */
+#sobre {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    margin: 25px 25px;
+    border-radius: 10px;
+}
+
+#sobre p {
+    max-width: 800px;
+    margin: 20px auto 20px auto;
+    line-height: 1.6;
+}
+
+#bio {
+    max-width: 150px;
+    width: auto;
+}
+
+/* ==========================================
+   CARROSSEL & GRID DE PRODUTOS
+   ========================================== */
+#produto {
+    text-align: center;
+    padding: 40px 20px 60px 20px;
+}
+
+/* Container do Carrossel (Página Inicial) */
+.carrossel-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 50px;
+}
+
+.cards-carrossel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.cards-carrossel::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Edge */
+}
+
+.cards-carrossel .roupas {
+    flex: 0 0 calc(25% - 15px);
+    /* Mostra 4 cards por vez */
+    min-width: 240px;
+}
+
+/* Botões do Carrossel */
+.btn-carrossel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(154, 96, 65, 0.85);
+    color: white;
+    border: none;
+    font-size: 22px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.btn-carrossel:hover {
+    background-color: #9A6041;
+}
+
+.btn-carrossel.prev {
+    left: 0;
+}
+
+.btn-carrossel.next {
+    right: 0;
+}
+
+/* Grid de Produtos Padrão (Página de Produtos) */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/* Card Individual do Produto */
+.roupas {
+    flex: 1 1 240px;
+    max-width: 280px;
+    background-color: white;
+    text-align: left;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.roupas img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.roupas h3 {
+    font-size: 16px;
+    color: black;
+    margin: 15px 15px 5px 15px;
+}
+
+.roupas p {
+    font-weight: bold;
+    color: #9A6041;
+    margin: 5px 15px 15px 15px;
+}
+
+/* Botão dentro do card (Página de Produtos) */
+.roupas .botao {
+    margin: 0 15px 15px 15px;
+    align-self: flex-start;
+    padding: 8px 20px;
+    font-size: 14px;
+    background-color: #003C00;
+}
+
+.roupas .botao:hover {
+    background-color: #081808;
+}
+
+
+/* ==========================================
+   PÁGINA DE PRODUTOS (MENU DE FILTROS)
+   ========================================== */
+#menu {
+    text-align: center;
+    padding: 40px 20px 10px 20px;
+}
+
+#menu h2 {
+    margin-bottom: 10px;
+}
+
+#menu p {
+    margin-bottom: 25px;
+}
+
+.estilos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.estilos .botao {
+    color: black;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+}
+
+.estilos .botao:hover {
+    color: white;
+    background-color: #d4a373;
+    border-color: #d4a373;
+}
+
+
+/* ==========================================
+   CONTATO, AGENDAMENTO & FORMULÁRIOS
+   ========================================== */
+#contato {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#contato h2 {
+    margin-bottom: 10px;
+}
+
+#contato p {
+    margin-bottom: 30px;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Formulário de Contato */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px;
+}
+
+form label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    /* Corrigido de 200% para 100% */
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #ffffff;
+    font-size: 14px;
+    color: #333;
+}
+
+form .botao {
+    border: none;
+    align-self: flex-start;
+    background-color: #d4a373;
+}
+
+form .botao:hover {
+    background-color: #8f6943;
+}
+
+/* Caixa de Informações (Agendamento) */
+#info {
+    background-color: #e8d8c8;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#info h3 {
+    margin-bottom: 10px;
+}
+
+#item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#item img {
+    width: 22px;
+    height: 22px;
+}
+
+#localização {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px 50px 20px;
+    width: 100%;
+}
+
+#localização img {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+/* ==========================================
+   RODAPÉ (STICKY FOOTER FIXADO)
+   ========================================== */
+footer {
+    background-color: #000000;
+    padding: 40px 20px;
+    margin-top: auto;
+    /* Empurra o rodapé para o final da tela */
+}
+
+.rodape {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.atendimento,
+.redes,
+.moda {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.atendimento h3,
+.redes h3,
+.moda h3 {
+    color: white;
+}
+
+.atendimento .item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.atendimento .item img,
+.icones img {
+    width: 22px;
+    height: 22px;
+}
+
+.atendimento p,
+.moda p {
+    color: #cccccc;
+    font-size: 14px;
+}
+
+.icones {
+    display: flex;
+    gap: 20px;
+}
