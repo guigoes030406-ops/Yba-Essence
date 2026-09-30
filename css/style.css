@@ -437,31 +437,31 @@ nav a:hover {
 }
 
 .pagina-servicos .cards-cascata .card-1 {
-    margin-left: 230px;
-}
-
-.pagina-servicos .cards-cascata .card-2 {
     margin-left: 210px;
 }
 
+.pagina-servicos .cards-cascata .card-2 {
+    margin-left: 190px;
+}
+
 .pagina-servicos .cards-cascata .card-3 {
-    margin-left: 170px;
+    margin-left: 150px;
 }
 
 .pagina-servicos .cards-cascata .card-4 {
-    margin-left: 130px;
+    margin-left: 110px;
 }
 
 .pagina-servicos .cards-cascata .card-5 {
-    margin-left: 90px;
+    margin-left: 70px;
 }
 
 .pagina-servicos .cards-cascata .card-6 {
-    margin-left: 50px;
+    margin-left: 30px;
 }
 
 .pagina-servicos .cards-cascata .card-7 {
-    margin-left: 10px;
+    margin-left: -10px;
 }
 
 .pagina-servicos .cards-cascata .servico:hover {
