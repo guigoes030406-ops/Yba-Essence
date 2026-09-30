@@ -662,6 +662,43 @@ footer {
    RESPONSIVIDADE MOBILE (Telas até 900px)
    ========================================== */
 @media (max-width: 900px) {
+
+    /* --- BANNER DA HOME --- */
+    #banner {
+        height: auto;
+        /* Permite que a altura se ajuste ao conteúdo */
+        min-height: 480px;
+        /* Mantém uma boa proporção visual */
+        padding: 40px 20px;
+        background-attachment: scroll;
+        /* Desativa a fixação que quebra no mobile */
+        justify-content: center;
+        align-items: center;
+        /* Centraliza o conteúdo no celular */
+        text-align: center;
+        gap: 15px;
+    }
+
+    #banner h1 {
+        font-size: 28px;
+        /* Reduz o tamanho do título principal */
+        line-height: 1.2;
+        max-width: 100%;
+    }
+
+    #banner p {
+        font-size: 16px;
+        /* Reduz o tamanho do parágrafo */
+        line-height: 1.4;
+        max-width: 100%;
+    }
+
+    #banner .botao {
+        font-size: 14px;
+        padding: 12px 30px;
+        margin-top: 10px;
+    }
+
     header {
         padding: 15px;
         justify-content: space-between;
