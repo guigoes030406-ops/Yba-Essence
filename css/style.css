@@ -66,7 +66,6 @@ p {
     border-radius: 4px;
 }
 
-
 /* ==========================================
    CABEÇALHO & NAVEGAÇÃO
    ========================================== */
@@ -108,7 +107,6 @@ nav a:hover {
     display: block;
 }
 
-
 /* ==========================================
    HOME PAGE - BANNER
    ========================================== */
@@ -118,7 +116,6 @@ nav a:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    /* Imagem de fundo fixada ao rolar */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -148,16 +145,13 @@ nav a:hover {
     padding: 15px 40px;
 }
 
-/* ==========================================
-   SEÇÃO BACK
-   ========================================== */
 #back {
     background-image: url("../assets/SobreBanner.png");
     background-size: cover;
 }
 
 /* ==========================================
-   SEÇÃO SOBRE
+   SEÇÃO SOBRE / AGENDAR PADRÃO (Home e Produtos)
    ========================================== */
 #sobre {
     background-color: #ffffff;
@@ -173,9 +167,12 @@ nav a:hover {
     line-height: 1.6;
 }
 
+/* Correção para o ícone da Biotecnology na página de Produtos */
 #bio {
-    max-width: 150px;
-    width: auto;
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto;
 }
 
 /* ==========================================
@@ -186,7 +183,6 @@ nav a:hover {
     padding: 40px 20px 60px 20px;
 }
 
-/* Container do Carrossel (Página Inicial) */
 .carrossel-wrapper {
     position: relative;
     max-width: 1200px;
@@ -201,21 +197,17 @@ nav a:hover {
     scroll-behavior: smooth;
     padding: 10px 0;
     scrollbar-width: none;
-    /* Firefox */
 }
 
 .cards-carrossel::-webkit-scrollbar {
     display: none;
-    /* Chrome, Safari, Edge */
 }
 
 .cards-carrossel .roupas {
     flex: 0 0 calc(25% - 15px);
-    /* Mostra 4 cards por vez */
     min-width: 240px;
 }
 
-/* Botões do Carrossel */
 .btn-carrossel {
     position: absolute;
     top: 50%;
@@ -244,7 +236,6 @@ nav a:hover {
     right: 0;
 }
 
-/* Grid de Produtos Padrão (Página de Produtos) */
 .cards {
     display: flex;
     flex-wrap: wrap;
@@ -254,7 +245,6 @@ nav a:hover {
     margin: 30px auto;
 }
 
-/* Card Individual do Produto */
 .roupas {
     flex: 1 1 240px;
     max-width: 280px;
@@ -285,7 +275,11 @@ nav a:hover {
     margin: 5px 15px 15px 15px;
 }
 
-/* Botão dentro do card (Página de Produtos) */
+.roupas:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
 .roupas .botao {
     margin: 0 15px 15px 15px;
     align-self: flex-start;
@@ -298,6 +292,224 @@ nav a:hover {
     background-color: #081808;
 }
 
+/* ==========================================
+   PÁGINA DE SERVIÇOS (LAYOUT CASCATA & BANNER)
+   ========================================== */
+.pagina-servicos #servicos-container {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    /* Garante que os dois lados tenham a mesma altura */
+}
+
+.pagina-servicos .servicos-banner-lado {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Distribui o banner no topo e o card agendar no fim */
+    gap: 30px;
+    padding-bottom: 40px;
+}
+
+.pagina-servicos .banner-conteudo {
+    background-image: url("../assets/ServicoBanner.png");
+    background-size: cover;
+    background-position: center;
+    padding: 80px 50px;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+    flex: 1;
+    /* Faz o banner se expandir para preencher todo o espaço vertical acima do card */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pagina-servicos .banner-conteudo h1 {
+    font-size: 100px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin-bottom: 20px;
+}
+
+
+/* Seção Agendar */
+.pagina-servicos #agendar {
+    width: 90%;
+    max-width: 810px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 25px;
+    margin-left: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.pagina-servicos #agendar img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0;
+}
+
+.pagina-servicos .agendar-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.pagina-servicos .agendar-texto h2 {
+    font-size: 22px;
+    color: black;
+}
+
+.pagina-servicos .agendar-texto p {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.4;
+}
+
+.pagina-servicos .agendar-texto .botao {
+    margin-top: 5px;
+}
+
+/* Lado Direito: Cards em Cascata */
+.pagina-servicos .servicos-cards-lado {
+    width: 45%;
+    padding: 40px 20px;
+}
+
+.pagina-servicos .cards-cascata {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* Card individual do serviço */
+.pagina-servicos .servico {
+    flex: 1 1 170px;
+    max-width: 450px;
+    background-color: white;
+    text-align: left;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* Imagem do ícone/serviço */
+.pagina-servicos .servico img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+/* Container de Texto (Título + Descrição em coluna) */
+.pagina-servicos .servico-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pagina-servicos .servico-info h3 {
+    font-size: 17px;
+    color: black;
+    margin: 0;
+    font-weight: bold;
+}
+
+.pagina-servicos .servico-info p {
+    font-size: 13px;
+    color: #444444;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.pagina-servicos .cards-cascata .card-1 {
+    margin-left: 230px;
+}
+
+.pagina-servicos .cards-cascata .card-2 {
+    margin-left: 210px;
+}
+
+.pagina-servicos .cards-cascata .card-3 {
+    margin-left: 170px;
+}
+
+.pagina-servicos .cards-cascata .card-4 {
+    margin-left: 130px;
+}
+
+.pagina-servicos .cards-cascata .card-5 {
+    margin-left: 90px;
+}
+
+.pagina-servicos .cards-cascata .card-6 {
+    margin-left: 50px;
+}
+
+.pagina-servicos .cards-cascata .card-7 {
+    margin-left: 10px;
+}
+
+.pagina-servicos .cards-cascata .servico:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 900px) {
+    .pagina-servicos #servicos-container {
+        flex-direction: column;
+    }
+
+    .pagina-servicos .servicos-banner-lado,
+    .pagina-servicos .servicos-cards-lado {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .pagina-servicos #agendar {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .pagina-servicos .cards-cascata .servico {
+        margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .pagina-servicos #servicos-container {
+        flex-direction: column;
+    }
+
+    .pagina-servicos .servicos-banner-lado,
+    .pagina-servicos .servicos-cards-lado {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .pagina-servicos #agendar {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .pagina-servicos .cards-cascata .servico {
+        margin-left: 0 !important;
+    }
+}
 
 /* ==========================================
    PÁGINA DE PRODUTOS (MENU DE FILTROS)
@@ -335,9 +547,8 @@ nav a:hover {
     border-color: #d4a373;
 }
 
-
 /* ==========================================
-   CONTATO, AGENDAMENTO & FORMULÁRIOS
+   CONTATO & AGENDAMENTO
    ========================================== */
 #contato {
     padding: 40px 20px;
@@ -362,12 +573,14 @@ nav a:hover {
     text-align: left;
 }
 
-/* Formulário de Contato */
 form {
     display: flex;
     flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 20px;
     width: 100%;
     max-width: 450px;
+    padding: 30px;
 }
 
 form label {
@@ -381,7 +594,6 @@ form input,
 form select,
 form textarea {
     width: 100%;
-    /* Corrigido de 200% para 100% */
     padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
@@ -401,7 +613,6 @@ form .botao:hover {
     background-color: #8f6943;
 }
 
-/* Caixa de Informações (Agendamento) */
 #info {
     background-color: #e8d8c8;
     padding: 30px;
@@ -443,15 +654,13 @@ form .botao:hover {
     border-radius: 8px;
 }
 
-
 /* ==========================================
-   RODAPÉ (STICKY FOOTER FIXADO)
+   RODAPÉ
    ========================================== */
 footer {
     background-color: #000000;
     padding: 40px 20px;
     margin-top: auto;
-    /* Empurra o rodapé para o final da tela */
 }
 
 .rodape {
